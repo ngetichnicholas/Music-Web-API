@@ -22,11 +22,14 @@
 	h2 {
 		color: blue;
 	}
+	#intro {
+		margin: 2rem;
+	}
 </style>
 
 <body onload="initialize();">
 	<nav class="navbar navbar-expand-lg navbar-light bg-info">
-		<a class="navbar-brand" href="#">Music Web Application</a>
+		<a class="navbar-brand" href="music.html">Music Web Application</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -41,6 +44,17 @@
 			</form>
 		</div>
 	</nav>
+	<div id="intro" class="text-center">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h1>Welcome to Music Web Application</h1>
+				<p>This is a Web application that displays information about music artists.</p>
+				<h3>To get information about a particular artist, type the name of the artist in the form provided in the header and click the "DisplayInfo" button to display the information. </h3>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
 	<div id="output" style="display: none">
 		<div class="container" id="aboutArtist">
 			<h2 class="text-center" style="text-transform: uppercase;">About <span id="artistName"></span></h2>

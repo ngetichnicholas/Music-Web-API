@@ -11,6 +11,7 @@ function sendRequest() {
 		if (this.readyState == 4) {
 			var artistInfoJsonData = JSON.parse(this.responseText);
 			document.getElementById("output").style.display = "block";
+			document.getElementById("intro").style.display = "none";
 			document.getElementById("artistName").innerHTML = artistInfoJsonData.artist.name;
 			document.getElementById("artistPicture").src = artistInfoJsonData.artist.image[artistInfoJsonData.artist.image.length - 2]["#text"];
 			document.getElementById("longBio").innerHTML = artistInfoJsonData.artist.bio.content;
