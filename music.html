@@ -25,6 +25,9 @@
 	#intro {
 		margin: 2rem;
 	}
+	.guide {
+		font-style: oblique;
+	}
 </style>
 
 <body onload="initialize();">
@@ -50,7 +53,7 @@
 			<div class="col-md-8">
 				<h1>Welcome to Music Web Application</h1>
 				<p>This is a Web application that displays information about music artists.</p>
-				<h3>To get information about a particular artist, type the name of the artist in the form provided in the header and click the "DisplayInfo" button to display the information. </h3>
+				<h3 class="guide">To get information about a particular artist, type the name of the artist in the form provided in the header and click the "DisplayInfo" button to display the information. </h3>
 			</div>
 			<div class="col-md-2"></div>
 		</div>
@@ -63,7 +66,7 @@
 					<img id="artistPicture" class="rounded" src="" alt="">
 				</div>
 				<div class="">
-					<h3 class="text-primary">Biography</h3>
+					<h3 id="artistLink" class="text-primary">Biography</h3>
 					<p id="longBio"></p>
 				</div>
 			</div>
@@ -76,7 +79,6 @@
 			</div>
 
 		</div>
-
 		<div class="container" id="similarArtist">
 			<h2 class="text-center" style="text-transform: uppercase;">Similar Artist</h2>
 			<ul type='square' class="row similar-artist-list">

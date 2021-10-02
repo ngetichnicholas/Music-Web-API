@@ -12,6 +12,8 @@ function sendRequest() {
 			var artistInfoJsonData = JSON.parse(this.responseText);
 			document.getElementById("output").style.display = "block";
 			document.getElementById("intro").style.display = "none";
+			artistName = '<a href="'+artistInfoJsonData.artist.url+'">Biography</a>'
+			document.getElementById("artistLink").innerHTML = artistName;
 			document.getElementById("artistName").innerHTML = artistInfoJsonData.artist.name;
 			document.getElementById("artistPicture").src = artistInfoJsonData.artist.image[artistInfoJsonData.artist.image.length - 2]["#text"];
 			document.getElementById("longBio").innerHTML = artistInfoJsonData.artist.bio.content;
@@ -28,10 +30,10 @@ function sendRequest() {
 			var albumJsonData = JSON.parse(this.responseText);
 			var topAlbumList = ""
 			for (albumList = 0; albumList < albumJsonData.topalbums.album.length; albumList++) {
-				topAlbumList += '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 album-list-item"><img class="album-photo-item rounded" src="' +
+				topAlbumList += '<a href="'+albumJsonData.topalbums.album[albumList].url+'"<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 album-list-item"><img class="album-photo-item rounded" src="' +
 					albumJsonData.topalbums.album[albumList].image[albumJsonData.topalbums.album[albumList].image.length - 2]["#text"] +
 					'" alt=""><p class="album-title-item text-center">' + albumJsonData.topalbums.album[albumList].name +
-					'</p></div>'
+					'</p></div></a>'
 				document.getElementById("albumListItems").innerHTML = topAlbumList;
 			}
 		}
@@ -47,7 +49,7 @@ function sendRequest() {
 			var similarArtistJsonData = JSON.parse(this.responseText);
 			var similarArtistList = "";
 			for (i = 0; i < similarArtistJsonData.similarartists.artist.length; i++) {
-				similarArtistList += "<li class='col-md-3 col-sm-4 col-xs-2'>" + similarArtistJsonData.similarartists.artist[i].name + "</li>";
+				similarArtistList += "<a href='"+similarArtistJsonData.similarartists.artist[i].url+"'<li class='col-md-3 col-sm-4 col-xs-2'>" + similarArtistJsonData.similarartists.artist[i].name + "</li></a>";
 			}
 			document.getElementsByClassName("similar-artist-list")[0].innerHTML = similarArtistList
 		}
